@@ -41,14 +41,15 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-card/50 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px]" />
+    <section id="testimonials" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/40 to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <span className="inline-block text-primary text-sm font-heading font-semibold tracking-wider uppercase mb-4">
+          <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
             Testimonials
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -65,10 +66,10 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="group p-6 md:p-8 rounded-2xl bg-background border border-border hover:border-primary/30 transition-all duration-300"
+              className="group p-6 md:p-8 rounded-2xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm"
             >
               {/* Quote Icon */}
-              <Quote className="w-8 h-8 text-primary/30 mb-4" />
+              <Quote className="w-8 h-8 text-primary/20 mb-4" />
               
               {/* Quote Text */}
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -78,8 +79,8 @@ const Testimonials = () => {
               {/* Author */}
               <div className="flex items-center gap-4">
                 {/* Avatar */}
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
-                  <span className="font-heading font-semibold text-sm text-primary">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center border border-border/40">
+                  <span className="font-heading font-semibold text-sm text-primary/80">
                     {testimonial.initials}
                   </span>
                 </div>

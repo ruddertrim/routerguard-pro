@@ -1,4 +1,4 @@
-import { Shield, Mail, MapPin, Phone } from "lucide-react";
+import { Shield, Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = {
@@ -29,14 +29,20 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="relative overflow-hidden">
+      {/* Gradient divider */}
+      <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-card/50 to-background" />
+      
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16 md:py-20">
+      <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2 mb-6">
-              <Shield className="w-8 h-8 text-primary" />
+              <Shield className="w-8 h-8 text-primary/80" />
               <span className="font-heading font-bold text-xl tracking-tight">
                 Router<span className="text-primary">BP</span>
               </span>
@@ -48,12 +54,12 @@ const Footer = () => {
             
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="mailto:support@routerbp.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                <Mail className="w-4 h-4" />
+              <a href="mailto:support@routerbp.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Mail className="w-4 h-4 text-primary/60" />
                 support@routerbp.com
               </a>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4" />
+                <Phone className="w-4 h-4 text-primary/60" />
                 1-800-ROUTER-BP
               </div>
             </div>
@@ -61,11 +67,11 @@ const Footer = () => {
 
           {/* Product Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Product</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Product</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -75,11 +81,11 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Company</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -89,11 +95,11 @@ const Footer = () => {
 
           {/* Support Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Support</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Support</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -103,11 +109,11 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4">Legal</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Legal</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                     {link.name}
                   </a>
                 </li>
@@ -118,7 +124,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border">
+      <div className="border-t border-border/30 relative z-10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
@@ -126,7 +132,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <span className="text-xs text-muted-foreground">
-                Protected by <span className="text-primary">256-bit encryption</span>
+                Protected by <span className="text-primary/80">256-bit encryption</span>
               </span>
             </div>
           </div>
