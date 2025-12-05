@@ -9,14 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 box-glow-sm hover:box-glow",
+        default: "bg-primary text-primary-foreground hover:bg-primary/80",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-border bg-transparent text-foreground hover:border-primary hover:text-primary",
+        outline: "border border-border bg-transparent text-foreground hover:bg-secondary hover:border-primary/40",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-secondary hover:text-foreground",
+        ghost: "hover:bg-secondary/80 hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 box-glow hover:scale-105 uppercase tracking-wider",
-        heroOutline: "border-2 border-primary/50 bg-transparent text-primary hover:bg-primary/10 hover:border-primary uppercase tracking-wider",
+        hero: "bg-primary text-primary-foreground hover:bg-primary/85 hover:scale-[1.02] uppercase tracking-wider shadow-lg shadow-primary/20",
+        heroOutline: "border border-primary/30 bg-primary/5 text-primary hover:bg-primary/10 hover:border-primary/50 uppercase tracking-wider backdrop-blur-sm",
+        navbar: "bg-secondary/80 text-foreground hover:bg-secondary border border-border/50",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -4,19 +4,22 @@ import { Shield, Lock, Wifi, ArrowRight } from "lucide-react";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background Effects */}
+      {/* Background Effects - Softer gradients */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-[100px] animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+        {/* Soft gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-primary/8 to-transparent rounded-full blur-[100px]" />
+        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-tl from-primary/5 to-transparent rounded-full blur-[80px]" />
         
-        {/* Grid pattern */}
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card/50" />
+        
+        {/* Grid pattern - more subtle */}
         <div 
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
                               linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
+            backgroundSize: '80px 80px'
           }}
         />
       </div>
@@ -24,15 +27,15 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/60 border border-border/40 mb-8 animate-fade-in backdrop-blur-sm" style={{ animationDelay: '0.1s' }}>
+            <div className="w-2 h-2 bg-primary/80 rounded-full" />
             <span className="text-sm text-muted-foreground">Enterprise-grade security for everyone</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Secure Your Entire Network
-            <span className="block text-primary text-glow mt-2">With One Router</span>
+            <span className="block text-primary mt-2">With One Router</span>
           </h1>
 
           {/* Subtitle */}
@@ -41,38 +44,45 @@ const Hero = () => {
             One setup protects every device in your home or business — no apps required.
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-              Get Started
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="heroOutline" size="xl" className="w-full sm:w-auto">
-              Start Free Trial
-            </Button>
+          {/* Glassmorphism CTA Container */}
+          <div 
+            className="inline-block p-8 rounded-3xl bg-card/30 backdrop-blur-xl border border-border/30 shadow-2xl shadow-background/50 mb-16 animate-fade-in"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="hero" size="xl" className="w-full sm:w-auto group">
+                Get Started
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button variant="heroOutline" size="xl" className="w-full sm:w-auto">
+                Start Free Trial
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground mt-4">No credit card required • 30-day money-back guarantee</p>
           </div>
 
-          {/* Trust indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-muted-foreground animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-primary" />
-              <span className="text-sm">No Logs Policy</span>
+          {/* Trust indicators - in glass cards */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
+              <Shield className="w-4 h-4 text-primary/80" />
+              <span className="text-sm text-muted-foreground">No Logs Policy</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Lock className="w-5 h-5 text-primary" />
-              <span className="text-sm">256-bit Encryption</span>
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
+              <Lock className="w-4 h-4 text-primary/80" />
+              <span className="text-sm text-muted-foreground">256-bit Encryption</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Wifi className="w-5 h-5 text-primary" />
-              <span className="text-sm">Unlimited Devices</span>
+            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
+              <Wifi className="w-4 h-4 text-primary/80" />
+              <span className="text-sm text-muted-foreground">Unlimited Devices</span>
             </div>
           </div>
         </div>
 
-        {/* Abstract shapes */}
-        <div className="absolute top-1/3 left-10 w-20 h-20 border border-primary/20 rounded-lg rotate-45 animate-float hidden lg:block" />
-        <div className="absolute bottom-1/3 right-10 w-16 h-16 border border-primary/30 rounded-full animate-float hidden lg:block" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 right-20 w-3 h-3 bg-primary/50 rounded-full animate-pulse hidden lg:block" />
+        {/* Abstract shapes - softer */}
+        <div className="absolute top-1/3 left-10 w-24 h-24 border border-primary/10 rounded-2xl rotate-12 animate-float hidden lg:block" />
+        <div className="absolute bottom-1/3 right-10 w-20 h-20 border border-primary/15 rounded-full animate-float hidden lg:block" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 right-24 w-2 h-2 bg-primary/30 rounded-full hidden lg:block" />
+        <div className="absolute bottom-1/2 left-24 w-3 h-3 bg-primary/20 rounded-full hidden lg:block" />
       </div>
     </section>
   );

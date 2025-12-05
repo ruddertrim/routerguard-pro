@@ -61,13 +61,14 @@ const Pricing = () => {
 
   return (
     <section id="pricing" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background */}
+      {/* Background with soft gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/3 rounded-full blur-[120px]" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <span className="inline-block text-primary text-sm font-heading font-semibold tracking-wider uppercase mb-4">
+          <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
             Pricing
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
@@ -79,12 +80,12 @@ const Pricing = () => {
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex items-center gap-4 p-1.5 rounded-full bg-secondary border border-border">
+          <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-secondary/60 border border-border/40 backdrop-blur-sm">
             <button
               onClick={() => setIsYearly(false)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
                 !isYearly 
-                  ? "bg-background text-foreground shadow-sm" 
+                  ? "bg-card text-foreground shadow-md" 
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -92,14 +93,14 @@ const Pricing = () => {
             </button>
             <button
               onClick={() => setIsYearly(true)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
+              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                 isYearly 
-                  ? "bg-background text-foreground shadow-sm" 
+                  ? "bg-card text-foreground shadow-md" 
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Yearly
-              <span className="text-xs text-primary font-semibold">Save 20%</span>
+              <span className="text-xs text-primary/80 font-semibold">Save 20%</span>
             </button>
           </div>
         </div>
@@ -111,14 +112,14 @@ const Pricing = () => {
               key={plan.name}
               className={`relative p-8 rounded-2xl border transition-all duration-300 ${
                 plan.popular 
-                  ? "bg-gradient-to-b from-primary/10 to-background border-primary/50 scale-105 shadow-xl shadow-primary/10" 
-                  : "bg-card border-border hover:border-primary/30"
+                  ? "bg-gradient-to-b from-primary/8 to-card/60 border-primary/30 scale-105 shadow-2xl backdrop-blur-sm" 
+                  : "bg-gradient-to-b from-card/70 to-card/30 border-border/40 hover:border-border/60 shadow-lg hover:shadow-xl hover:-translate-y-1"
               }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-heading font-semibold uppercase tracking-wider">
+                  <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-heading font-semibold uppercase tracking-wider shadow-lg">
                     <Star className="w-3 h-3 fill-current" />
                     Most Popular
                   </div>
@@ -158,7 +159,7 @@ const Pricing = () => {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                      plan.popular ? "text-primary" : "text-muted-foreground"
+                      plan.popular ? "text-primary/80" : "text-muted-foreground"
                     }`} />
                     <span className="text-sm text-muted-foreground">{feature}</span>
                   </li>
