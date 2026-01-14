@@ -1,4 +1,6 @@
-import { Shield, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import logo from "@/assets/logo.svg";
+
 const Footer = () => {
   const footerLinks = {
     product: [{
@@ -14,24 +16,8 @@ const Footer = () => {
       name: "Локации серверов",
       href: "#"
     }],
-    company: [{
-      name: "О нас",
-      href: "#about"
-    }, {
-      name: "Карьера",
-      href: "#"
-    }, {
-      name: "Пресс-кит",
-      href: "#"
-    }, {
-      name: "Контакты",
-      href: "#"
-    }],
     support: [{
-      name: "Центр помощи",
-      href: "#"
-    }, {
-      name: "Инструкции",
+      name: "Поддержка",
       href: "#"
     }, {
       name: "FAQ",
@@ -45,12 +31,6 @@ const Footer = () => {
       href: "#"
     }, {
       name: "Условия использования",
-      href: "#"
-    }, {
-      name: "Cookie-политика",
-      href: "#"
-    }, {
-      name: "DMCA",
       href: "#"
     }]
   };
@@ -67,10 +47,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2 mb-6">
-              <Shield className="w-8 h-8 text-primary/80" />
-              <span className="font-heading font-bold text-xl tracking-tight">
-                Router<span className="text-primary">BP</span>
-              </span>
+              <img src={logo} alt="RouterBP" className="h-6" />
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
               VPN-защита корпоративного уровня для всей вашей домашней или бизнес-сети. 
@@ -101,9 +78,6 @@ const Footer = () => {
                 </li>)}
             </ul>
           </div>
-
-          {/* Company Links */}
-          
 
           {/* Support Links */}
           <div>
@@ -138,11 +112,6 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Router BP. Все права защищены.
             </p>
-            <div className="flex items-center gap-6">
-              <span className="text-xs text-muted-foreground">
-                Защищено <span className="text-primary/80">256-битным шифрованием</span>
-              </span>
-            </div>
           </div>
         </div>
       </div>
