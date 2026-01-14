@@ -49,7 +49,7 @@ const Navbar = () => {
           {/* Contact Button */}
           <a 
             href="#pricing"
-            className="hidden md:flex items-center px-5 py-2.5 rounded-full bg-[#3CFF00] text-black text-sm font-medium hover:bg-[#35e600] hover:scale-105 transition-all duration-200"
+            className="hidden md:flex items-center px-7 py-2.5 rounded-xl bg-[#3CFF00] text-black text-sm font-medium hover:bg-[#35e600] hover:scale-105 transition-all duration-200"
           >
             Начать
           </a>
