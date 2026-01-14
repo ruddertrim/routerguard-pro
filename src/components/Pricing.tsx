@@ -53,7 +53,7 @@ const Pricing = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="relative flex flex-col p-6 md:p-8 rounded-2xl bg-card/60 border border-border/40 backdrop-blur-sm min-h-[520px]"
+              className="relative flex flex-col p-6 md:p-8 rounded-2xl bg-card/60 border border-border/40 backdrop-blur-sm min-h-[600px]"
             >
               {/* Plan Header */}
               <div className="flex items-center justify-between mb-6">
