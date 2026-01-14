@@ -1,4 +1,6 @@
-import { Quote } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Testimonials = () => {
   const testimonials = [
@@ -40,6 +42,29 @@ const Testimonials = () => {
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  }, [testimonials.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  }, [testimonials.length]);
+
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, nextSlide]);
+
+  const handleManualNav = (action: () => void) => {
+    setIsAutoPlaying(false);
+    action();
+    setTimeout(() => setIsAutoPlaying(true), 10000);
+  };
+
   return (
     <section id="testimonials" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background gradient */}
@@ -49,49 +74,88 @@ const Testimonials = () => {
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-          <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            Отзывы
-          </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Нам доверяют <span className="text-primary">тысячи</span>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
+            отзывы
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Присоединяйтесь к растущему сообществу домов и компаний, которые доверяют Router BP 
-            свою сетевую безопасность.
-          </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.name}
-              className="group p-6 md:p-8 rounded-2xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm"
+        {/* Slider Container */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Slides */}
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {/* Quote Icon */}
-              <Quote className="w-8 h-8 text-primary/20 mb-4" />
-              
-              {/* Quote Text */}
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                "{testimonial.quote}"
-              </p>
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={testimonial.name}
+                  className="w-full flex-shrink-0 px-4"
+                >
+                  <div className="p-8 md:p-12 rounded-2xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 backdrop-blur-sm text-center">
+                    {/* Quote Icon */}
+                    <Quote className="w-10 h-10 text-primary/20 mb-6 mx-auto" />
+                    
+                    {/* Quote Text */}
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+                      "{testimonial.quote}"
+                    </p>
 
-              {/* Author */}
-              <div className="flex items-center gap-4">
-                {/* Avatar */}
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center border border-border/40">
-                  <span className="font-heading font-semibold text-sm text-primary/80">
-                    {testimonial.initials}
-                  </span>
+                    {/* Author */}
+                    <div className="flex flex-col items-center gap-3">
+                      {/* Avatar */}
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center border border-border/40">
+                        <span className="font-heading font-semibold text-base text-primary/80">
+                          {testimonial.initials}
+                        </span>
+                      </div>
+                      
+                      <div className="text-center">
+                        <p className="font-heading font-semibold">{testimonial.name}</p>
+                        <p className="text-muted-foreground text-sm">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                
-                <div>
-                  <p className="font-heading font-semibold text-sm">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-xs">{testimonial.role}</p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => handleManualNav(prevSlide)}
+              className="rounded-full w-12 h-12 border-border/60 hover:border-primary/40 hover:bg-primary/5"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+
+            {/* Dots */}
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleManualNav(() => setCurrentIndex(index))}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? "bg-primary w-6" 
+                      : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                />
+              ))}
+            </div>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => handleManualNav(nextSlide)}
+              className="rounded-full w-12 h-12 border-border/60 hover:border-primary/40 hover:bg-primary/5"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>

@@ -49,16 +49,9 @@ const FAQ = () => {
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-          <span className="inline-block text-primary text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            FAQ
-          </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Часто задаваемые <span className="text-primary">вопросы</span>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
+            вопросы
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Есть вопросы? У нас есть ответы. Если не нашли нужного, 
-            наша команда поддержки всегда рада помочь.
-          </p>
         </div>
 
         {/* FAQ Accordion */}
