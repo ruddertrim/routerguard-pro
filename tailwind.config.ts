@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         heading: ["Unbounded", "sans-serif"],
         body: ["Inter", "sans-serif"],
+        gotham: ["Montserrat", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

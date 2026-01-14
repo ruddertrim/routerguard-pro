@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav className="fixed top-0 left-0 right-0 z-50 pt-4">
       <div className="w-full max-w-[1300px] mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -22,14 +22,14 @@ const Navbar = () => {
             <img src={logo} alt="RouterBP" className="h-5 md:h-6" />
           </a>
 
-          {/* Desktop Navigation - Centered white pill */}
+          {/* Desktop Navigation - Centered glass pill */}
           <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
-            <div className="flex items-center gap-0 px-2 py-2 rounded-xl bg-foreground/10 backdrop-blur-xl border border-foreground/20">
+            <div className="flex items-center gap-1 px-3 py-2.5 rounded-xl bg-foreground/20 backdrop-blur-xl border border-foreground/30">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-5 py-2.5 rounded-lg text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-all duration-200 text-sm font-medium"
+                  className="px-6 py-2.5 rounded-lg text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-all duration-200 text-sm font-medium font-gotham lowercase"
                 >
                   {link.name}
                 </a>
