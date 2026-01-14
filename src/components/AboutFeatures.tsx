@@ -1,6 +1,6 @@
-import { Shield, Eye, Zap, Globe } from "lucide-react";
+import { Shield, Eye, Zap, Globe, Home, Smartphone, Check } from "lucide-react";
 
-const About = () => {
+const AboutFeatures = () => {
   const differentiators = [
     {
       icon: Zap,
@@ -24,6 +24,27 @@ const About = () => {
     }
   ];
 
+  const features = [
+    {
+      icon: Home,
+      title: "VPN для всего дома",
+      description: "Одна настройка роутера защищает весь дом. Каждое устройство, каждая комната, каждое подключение.",
+      highlights: ["Единая конфигурация", "Без приложений", "Автозащита"]
+    },
+    {
+      icon: Smartphone,
+      title: "Автозащита устройств",
+      description: "Каждое устройство, подключённое к сети, автоматически защищено без каких-либо действий.",
+      highlights: ["Smart TV и консоли", "IoT-устройства", "Гостевые устройства"]
+    },
+    {
+      icon: Zap,
+      title: "Быстрый шифрованный трафик",
+      description: "Наши протоколы нового поколения обеспечивают высокую скорость даже при полном шифровании.",
+      highlights: ["Протокол WireGuard", "Оптимизированные серверы", "Без ограничений"]
+    }
+  ];
+
   return (
     <section id="about" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background gradient */}
@@ -32,15 +53,15 @@ const About = () => {
       
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
+        <div className="text-left mb-14 md:mb-16">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
             о нас
           </h2>
         </div>
 
         {/* Why Router-Level VPN */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 max-w-5xl mx-auto">
-          <div className="order-2 lg:order-1 text-center lg:text-left">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="text-left">
             <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6">
               Почему VPN на уровне роутера?
             </h3>
@@ -61,9 +82,9 @@ const About = () => {
             </div>
           </div>
           
-          <div className="order-1 lg:order-2 relative">
+          <div className="relative">
             {/* Abstract visual representation with glassmorphism */}
-            <div className="relative aspect-square max-w-md mx-auto">
+            <div className="relative aspect-square max-w-md">
               {/* Central shield - glass effect */}
               <div className="absolute inset-1/4 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl rounded-2xl border border-border/50 flex items-center justify-center shadow-xl">
                 <Shield className="w-16 h-16 text-primary/80" />
@@ -95,17 +116,55 @@ const About = () => {
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {differentiators.map((item, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+          {differentiators.map((item) => (
             <div
               key={item.title}
-              className="group p-6 rounded-2xl bg-gradient-to-b from-card/80 to-card/40 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-center"
+              className="group p-6 rounded-2xl bg-gradient-to-b from-card/80 to-card/40 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-left"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-colors mx-auto">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-colors">
                 <item.icon className="w-6 h-6 text-primary/80" />
               </div>
               <h4 className="font-heading font-semibold text-lg mb-2">{item.title}</h4>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Features Section */}
+        <div className="text-left mb-14 md:mb-16">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
+            преимущества
+          </h2>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="group p-8 rounded-2xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 hover:border-border/60 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm"
+            >
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-6 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
+                <feature.icon className="w-7 h-7 text-primary/80" />
+              </div>
+
+              {/* Content */}
+              <h3 className="font-heading font-semibold text-xl mb-3 text-left">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5 text-left">
+                {feature.description}
+              </p>
+
+              {/* Highlights */}
+              <ul className="space-y-2">
+                {feature.highlights.map((highlight) => (
+                  <li key={highlight} className="flex items-center gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary/70 flex-shrink-0" />
+                    <span className="text-muted-foreground">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -114,4 +173,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutFeatures;

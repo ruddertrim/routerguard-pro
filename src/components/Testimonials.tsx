@@ -75,7 +75,7 @@ const Testimonials = () => {
       
       <div className="relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-14 md:mb-16 px-4">
+        <div className="text-left mb-14 md:mb-16 w-full max-w-[1300px] mx-auto px-4">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
             отзывы
           </h2>
@@ -95,7 +95,7 @@ const Testimonials = () => {
                 key={`${testimonial.name}-${index}`}
                 className="w-[300px] md:w-[340px] flex-shrink-0"
               >
-                <div className="p-6 md:p-7 rounded-xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 backdrop-blur-sm h-full min-h-[220px] flex flex-col">
+                <div className="p-6 md:p-7 rounded-xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 backdrop-blur-sm h-full min-h-[260px] flex flex-col">
                   {/* Quote Icon */}
                   <Quote className="w-6 h-6 text-primary/20 mb-4" />
                   
@@ -123,9 +123,9 @@ const Testimonials = () => {
             ))}
           </div>
 
-          {/* Gradient fades on edges */}
-          <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
-          <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+          {/* Gradient fades on edges - more blur */}
+          <div className="absolute inset-y-0 left-0 w-32 md:w-60 bg-gradient-to-r from-background via-background/80 to-transparent pointer-events-none z-10" />
+          <div className="absolute inset-y-0 right-0 w-32 md:w-60 bg-gradient-to-l from-background via-background/80 to-transparent pointer-events-none z-10" />
         </div>
       </div>
 
