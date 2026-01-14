@@ -1,47 +1,36 @@
-import { Shield, Eye, Zap, Globe, Home, Smartphone, Check } from "lucide-react";
+import { Shield, Globe, Gauge, Wifi, Lock, Zap } from "lucide-react";
 
 const AboutFeatures = () => {
-  const differentiators = [
-    {
-      icon: Zap,
-      title: "Молниеносная скорость",
-      description: "Наши оптимизированные серверы обеспечивают максимальную скорость соединения даже при полном шифровании."
-    },
+  const features = [
     {
       icon: Shield,
-      title: "Надёжная защита",
-      description: "256-битное AES-шифрование военного уровня защищает вашу сеть от киберугроз и слежки."
-    },
-    {
-      icon: Eye,
-      title: "Без логов",
-      description: "Мы никогда не отслеживаем, не храним и не продаём ваши данные. Ваша активность остаётся приватной."
+      title: "Полная защита сети",
+      description: "Защитите все устройства в вашей сети одной настройкой роутера. Без отдельных приложений."
     },
     {
       icon: Globe,
-      title: "Глобальное покрытие",
-      description: "Доступ к контенту из любой точки мира благодаря сети серверов в 90+ странах."
-    }
-  ];
-
-  const features = [
-    {
-      icon: Home,
-      title: "VPN для всего дома",
-      description: "Одна настройка роутера защищает весь дом. Каждое устройство, каждая комната, каждое подключение.",
-      highlights: ["Единая конфигурация", "Без приложений", "Автозащита"]
+      title: "Глобальный доступ",
+      description: "Подключайтесь к серверам в 90+ странах и получайте доступ к любому контенту без ограничений."
     },
     {
-      icon: Smartphone,
-      title: "Автозащита устройств",
-      description: "Каждое устройство, подключённое к сети, автоматически защищено без каких-либо действий.",
-      highlights: ["Smart TV и консоли", "IoT-устройства", "Гостевые устройства"]
+      icon: Gauge,
+      title: "Максимальная скорость",
+      description: "Оптимизированные серверы и протокол WireGuard обеспечивают скорость без потерь."
+    },
+    {
+      icon: Wifi,
+      title: "Для всех устройств",
+      description: "Smart TV, игровые консоли, IoT-устройства и гаджеты гостей — всё под защитой."
+    },
+    {
+      icon: Lock,
+      title: "Без логов и слежки",
+      description: "Мы не храним и не продаём ваши данные. Полная конфиденциальность гарантирована."
     },
     {
       icon: Zap,
-      title: "Быстрый шифрованный трафик",
-      description: "Наши протоколы нового поколения обеспечивают высокую скорость даже при полном шифровании.",
-      highlights: ["Протокол WireGuard", "Оптимизированные серверы", "Без ограничений"]
+      title: "Быстрая настройка",
+      description: "Настройте VPN на роутере за 5 минут по нашей инструкции. Поддержка 24/7."
     }
   ];
 
@@ -49,7 +38,7 @@ const AboutFeatures = () => {
     <section id="about" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/3 rounded-full blur-[100px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#3CFF00]/5 rounded-full blur-[100px]" />
       
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -59,117 +48,63 @@ const AboutFeatures = () => {
           </h2>
         </div>
 
-        {/* Why Router-Level VPN */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div className="text-left">
-            <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6">
-              Почему VPN на уровне роутера?
-            </h3>
-            <div className="space-y-4 text-muted-foreground">
-              <p>
-                Обычные VPN-приложения защищают только то устройство, на которое установлены. 
-                Это значит, что ваш Smart TV, игровая консоль, IoT-устройства и телефоны гостей 
-                остаются незащищёнными.
-              </p>
-              <p>
-                С Router BP защита VPN происходит в источнике — вашем роутере. 
-                Каждое устройство, подключённое к сети, автоматически защищено 
-                без дополнительного ПО или настройки.
-              </p>
-              <p className="text-foreground font-medium">
-                Одна настройка. Полная защита. Никаких хлопот.
-              </p>
-            </div>
+        {/* Features Grid - 6 cards in 2 rows of 3 */}
+        <div className="space-y-6">
+          {/* First row */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {features.slice(0, 3).map((feature) => (
+              <FeatureCard key={feature.title} feature={feature} />
+            ))}
           </div>
           
-          <div className="relative">
-            {/* Abstract visual representation with glassmorphism */}
-            <div className="relative aspect-square max-w-md">
-              {/* Central shield - glass effect */}
-              <div className="absolute inset-1/4 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl rounded-2xl border border-border/50 flex items-center justify-center shadow-xl">
-                <Shield className="w-16 h-16 text-primary/80" />
-              </div>
-              
-              {/* Orbiting elements with softer styling */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-secondary to-secondary/60 rounded-xl flex items-center justify-center border border-border/40 shadow-lg">
-                <span className="text-xs font-mono text-muted-foreground">TV</span>
-              </div>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-14 h-14 bg-gradient-to-br from-secondary to-secondary/60 rounded-xl flex items-center justify-center border border-border/40 shadow-lg">
-                <span className="text-xs font-mono text-muted-foreground">IoT</span>
-              </div>
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-secondary to-secondary/60 rounded-xl flex items-center justify-center border border-border/40 shadow-lg">
-                <span className="text-xs font-mono text-muted-foreground">PC</span>
-              </div>
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-14 h-14 bg-gradient-to-br from-secondary to-secondary/60 rounded-xl flex items-center justify-center border border-border/40 shadow-lg">
-                <span className="text-xs font-mono text-muted-foreground">Phone</span>
-              </div>
-              
-              {/* Connection lines - softer */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-                <line x1="50" y1="14" x2="50" y2="28" stroke="hsl(var(--primary) / 0.25)" strokeWidth="1" strokeDasharray="3,3" />
-                <line x1="50" y1="72" x2="50" y2="86" stroke="hsl(var(--primary) / 0.25)" strokeWidth="1" strokeDasharray="3,3" />
-                <line x1="14" y1="50" x2="28" y2="50" stroke="hsl(var(--primary) / 0.25)" strokeWidth="1" strokeDasharray="3,3" />
-                <line x1="72" y1="50" x2="86" y2="50" stroke="hsl(var(--primary) / 0.25)" strokeWidth="1" strokeDasharray="3,3" />
-              </svg>
-            </div>
+          {/* Second row */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {features.slice(3, 6).map((feature) => (
+              <FeatureCard key={feature.title} feature={feature} />
+            ))}
           </div>
-        </div>
-
-        {/* Differentiators Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {differentiators.map((item) => (
-            <div
-              key={item.title}
-              className="group p-6 rounded-2xl bg-gradient-to-b from-card/80 to-card/40 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-left"
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-colors">
-                <item.icon className="w-6 h-6 text-primary/80" />
-              </div>
-              <h4 className="font-heading font-semibold text-lg mb-2">{item.title}</h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Features Section */}
-        <div className="text-left mb-14 md:mb-16">
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
-            преимущества
-          </h2>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group p-8 rounded-2xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 hover:border-border/60 transition-all duration-500 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm"
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-6 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300">
-                <feature.icon className="w-7 h-7 text-primary/80" />
-              </div>
-
-              {/* Content */}
-              <h3 className="font-heading font-semibold text-xl mb-3 text-left">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-5 text-left">
-                {feature.description}
-              </p>
-
-              {/* Highlights */}
-              <ul className="space-y-2">
-                {feature.highlights.map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-2 text-sm">
-                    <Check className="w-4 h-4 text-primary/70 flex-shrink-0" />
-                    <span className="text-muted-foreground">{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
         </div>
       </div>
     </section>
+  );
+};
+
+interface Feature {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+}
+
+const FeatureCard = ({ feature }: { feature: Feature }) => {
+  const Icon = feature.icon;
+  
+  return (
+    <div className="group relative p-6 rounded-2xl bg-gradient-to-b from-card/90 to-card/50 border border-border/40 hover:border-[#3CFF00]/30 transition-all duration-300 overflow-hidden">
+      {/* Green glow on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#3CFF00]/0 to-[#3CFF00]/0 group-hover:from-[#3CFF00]/5 group-hover:to-transparent transition-all duration-500" />
+      
+      {/* Decorative top border glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#3CFF00]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <div className="relative z-10">
+        {/* Icon with green accent */}
+        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#3CFF00]/15 to-[#3CFF00]/5 border border-[#3CFF00]/20 flex items-center justify-center mb-5 group-hover:from-[#3CFF00]/25 group-hover:to-[#3CFF00]/10 group-hover:border-[#3CFF00]/40 transition-all duration-300">
+          <Icon className="w-6 h-6 text-[#3CFF00]" />
+        </div>
+        
+        {/* Content */}
+        <div className="flex items-center gap-2 mb-3">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#3CFF00]/60" />
+          <h3 className="font-heading font-semibold text-lg text-foreground">
+            {feature.title}
+          </h3>
+        </div>
+        
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          {feature.description}
+        </p>
+      </div>
+    </div>
   );
 };
 
