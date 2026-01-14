@@ -24,12 +24,12 @@ const Navbar = () => {
 
           {/* Desktop Navigation - Centered white pill */}
           <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
-            <div className="flex items-center gap-0 px-1 py-1 rounded-full bg-foreground/95 backdrop-blur-sm">
+            <div className="flex items-center gap-0 px-2 py-2 rounded-xl bg-foreground/10 backdrop-blur-xl border border-foreground/20">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-1.5 rounded-full text-background/70 hover:text-background hover:bg-background/10 transition-all duration-200 text-sm font-medium"
+                  className="px-5 py-2.5 rounded-lg text-foreground/70 hover:text-foreground hover:bg-foreground/10 transition-all duration-200 text-sm font-medium"
                 >
                   {link.name}
                 </a>
