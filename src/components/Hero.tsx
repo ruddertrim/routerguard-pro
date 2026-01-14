@@ -17,14 +17,10 @@ const Hero = () => {
           }}
         />
         
-        {/* Green glow accent */}
-        <div className="absolute top-1/3 right-1/4 w-[300px] h-[300px] bg-[#3CFF00]/8 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 left-1/3 w-[200px] h-[200px] bg-[#3CFF00]/5 rounded-full blur-[100px]" />
-        
         {/* Circular background effect */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#3CFF00]/5" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-[#3CFF00]/8" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-[#3CFF00]/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-muted-foreground/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-muted-foreground/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-muted-foreground/10" />
         
         {/* Smooth gradient fade at bottom */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
@@ -44,19 +40,19 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-start gap-4">
-            {/* Primary button - green */}
+          <div className="flex flex-col sm:flex-row items-start gap-5">
+            {/* Primary button - dark bg */}
             <a 
               href="#pricing"
-              className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-xl bg-[#3CFF00] text-black font-medium text-base hover:bg-[#35e600] hover:scale-105 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-secondary text-foreground font-medium text-base hover:bg-secondary/80 transition-colors border border-border/30"
             >
               Начать
             </a>
             
-            {/* Secondary button - outline */}
+            {/* Secondary button - outline with accent */}
             <a 
               href="#about" 
-              className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-transparent text-muted-foreground font-medium text-base border border-border/50 hover:border-[#3CFF00]/50 hover:text-[#3CFF00] transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-transparent text-primary font-medium text-base border border-primary/30 hover:bg-primary/10 transition-colors"
             >
               Узнать больше
             </a>
