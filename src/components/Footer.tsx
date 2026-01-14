@@ -28,10 +28,7 @@ const Footer = () => {
       href: "#"
     }],
     support: [{
-      name: "Центр помощи",
-      href: "#"
-    }, {
-      name: "Инструкции",
+      name: "Поддержка",
       href: "#"
     }, {
       name: "FAQ",
