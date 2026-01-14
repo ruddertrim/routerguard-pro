@@ -5,9 +5,9 @@ const Hero = () => {
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20">
       {/* Background Grid */}
       <div className="absolute inset-0">
-        {/* Grid pattern */}
+        {/* Grid pattern with blur */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 backdrop-blur-[1px]"
           style={{
             backgroundImage: `
               linear-gradient(to right, hsl(var(--foreground) / 0.03) 1px, transparent 1px),
@@ -22,8 +22,9 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-muted-foreground/10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-muted-foreground/10" />
         
-        {/* Subtle vignette/gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50" />
+        {/* Smooth gradient fade at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
