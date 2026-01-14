@@ -4,66 +4,67 @@ const About = () => {
   const differentiators = [
     {
       icon: Zap,
-      title: "Lightning Fast",
-      description: "Our optimized servers ensure your connection speed remains blazing fast, even with full encryption enabled."
+      title: "Молниеносная скорость",
+      description: "Наши оптимизированные серверы обеспечивают максимальную скорость соединения даже при полном шифровании."
     },
     {
       icon: Shield,
-      title: "Rock-Solid Security",
-      description: "Military-grade 256-bit AES encryption protects your entire network from cyber threats and surveillance."
+      title: "Надёжная защита",
+      description: "256-битное AES-шифрование военного уровня защищает вашу сеть от киберугроз и слежки."
     },
     {
       icon: Eye,
-      title: "Zero Logs",
-      description: "We never track, store, or sell your data. Your online activity remains completely private."
+      title: "Без логов",
+      description: "Мы никогда не отслеживаем, не храним и не продаём ваши данные. Ваша активность остаётся приватной."
     },
     {
       icon: Globe,
-      title: "Global Coverage",
-      description: "Access content from anywhere with our network of servers spanning 90+ countries worldwide."
+      title: "Глобальное покрытие",
+      description: "Доступ к контенту из любой точки мира благодаря сети серверов в 90+ странах."
     }
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="about" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/3 rounded-full blur-[100px]" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
           <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            About Router BP
+            О Router BP
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Privacy Is a Right, <span className="text-primary">Not a Privilege</span>
+            Приватность — это право, <span className="text-primary">не привилегия</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Router BP was founded with a single mission: to make enterprise-grade network security 
-            accessible to everyone. We believe that your digital privacy shouldn't depend on 
-            technical expertise or expensive solutions.
+            Router BP создан с единственной миссией: сделать корпоративную сетевую безопасность 
+            доступной для каждого. Мы верим, что ваша цифровая приватность не должна зависеть 
+            от технических знаний или дорогих решений.
           </p>
         </div>
 
         {/* Why Router-Level VPN */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div className="order-2 lg:order-1">
             <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6">
-              Why Router-Level VPN?
+              Почему VPN на уровне роутера?
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Traditional VPN apps only protect the device they're installed on. That means 
-                your smart TV, gaming console, IoT devices, and guest phones remain exposed.
+                Обычные VPN-приложения защищают только то устройство, на которое установлены. 
+                Это значит, что ваш Smart TV, игровая консоль, IoT-устройства и телефоны гостей 
+                остаются незащищёнными.
               </p>
               <p>
-                With Router BP, your VPN protection happens at the source — your router. 
-                Every single device that connects to your network is automatically protected, 
-                without any additional software or configuration.
+                С Router BP защита VPN происходит в источнике — вашем роутере. 
+                Каждое устройство, подключённое к сети, автоматически защищено 
+                без дополнительного ПО или настройки.
               </p>
               <p className="text-foreground font-medium">
-                One setup. Complete protection. Zero hassle.
+                Одна настройка. Полная защита. Никаких хлопот.
               </p>
             </div>
           </div>

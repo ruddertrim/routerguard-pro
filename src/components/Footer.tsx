@@ -3,27 +3,27 @@ import { Shield, Mail, Phone } from "lucide-react";
 const Footer = () => {
   const footerLinks = {
     product: [
-      { name: "Features", href: "#features" },
-      { name: "Pricing", href: "#pricing" },
-      { name: "Compatibility", href: "#" },
-      { name: "Server Locations", href: "#" },
+      { name: "Преимущества", href: "#features" },
+      { name: "Тарифы", href: "#pricing" },
+      { name: "Совместимость", href: "#" },
+      { name: "Локации серверов", href: "#" },
     ],
     company: [
-      { name: "About Us", href: "#about" },
-      { name: "Careers", href: "#" },
-      { name: "Press Kit", href: "#" },
-      { name: "Contact", href: "#" },
+      { name: "О нас", href: "#about" },
+      { name: "Карьера", href: "#" },
+      { name: "Пресс-кит", href: "#" },
+      { name: "Контакты", href: "#" },
     ],
     support: [
-      { name: "Help Center", href: "#" },
-      { name: "Setup Guides", href: "#" },
+      { name: "Центр помощи", href: "#" },
+      { name: "Инструкции", href: "#" },
       { name: "FAQ", href: "#faq" },
-      { name: "Status Page", href: "#" },
+      { name: "Статус", href: "#" },
     ],
     legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms of Service", href: "#" },
-      { name: "Cookie Policy", href: "#" },
+      { name: "Политика конфиденциальности", href: "#" },
+      { name: "Условия использования", href: "#" },
+      { name: "Cookie-политика", href: "#" },
       { name: "DMCA", href: "#" },
     ],
   };
@@ -37,7 +37,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-card/50 to-background" />
       
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
+      <div className="w-full max-w-[1300px] mx-auto px-4 py-16 md:py-20 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 md:gap-12">
           {/* Brand Column */}
           <div className="col-span-2">
@@ -48,8 +48,8 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              Enterprise-grade VPN protection for your entire home or business network. 
-              One setup, complete security.
+              VPN-защита корпоративного уровня для всей вашей домашней или бизнес-сети. 
+              Одна настройка — полная безопасность.
             </p>
             
             {/* Contact Info */}
@@ -60,14 +60,14 @@ const Footer = () => {
               </a>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary/60" />
-                1-800-ROUTER-BP
+                8-800-ROUTER-BP
               </div>
             </div>
           </div>
 
           {/* Product Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Product</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Продукт</h4>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
@@ -81,7 +81,7 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Company</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Компания</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -95,7 +95,7 @@ const Footer = () => {
 
           {/* Support Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Support</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Поддержка</h4>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
@@ -109,7 +109,7 @@ const Footer = () => {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Legal</h4>
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Правовая информация</h4>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
@@ -125,14 +125,14 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-border/30 relative z-10">
-        <div className="container mx-auto px-4 py-6">
+        <div className="w-full max-w-[1300px] mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Router BP. All rights reserved.
+              © {new Date().getFullYear()} Router BP. Все права защищены.
             </p>
             <div className="flex items-center gap-6">
               <span className="text-xs text-muted-foreground">
-                Protected by <span className="text-primary/80">256-bit encryption</span>
+                Защищено <span className="text-primary/80">256-битным шифрованием</span>
               </span>
             </div>
           </div>

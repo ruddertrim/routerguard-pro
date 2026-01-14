@@ -7,76 +7,76 @@ const Pricing = () => {
 
   const plans = [
     {
-      name: "Basic",
-      description: "Perfect for individuals and small households",
+      name: "Базовый",
+      description: "Идеален для отдельных пользователей и небольших домохозяйств",
       monthlyPrice: 9.99,
       yearlyPrice: 7.99,
       features: [
-        "Up to 5 devices",
-        "50+ server locations",
-        "256-bit encryption",
-        "No-logs policy",
-        "Email support",
-        "Basic setup guide"
+        "До 5 устройств",
+        "50+ локаций серверов",
+        "256-битное шифрование",
+        "Политика без логов",
+        "Email-поддержка",
+        "Базовое руководство"
       ],
       popular: false
     },
     {
-      name: "Advanced",
-      description: "Ideal for families and power users",
+      name: "Расширенный",
+      description: "Идеален для семей и продвинутых пользователей",
       monthlyPrice: 14.99,
       yearlyPrice: 11.99,
       features: [
-        "Up to 15 devices",
-        "90+ server locations",
-        "256-bit encryption",
-        "No-logs policy",
-        "24/7 live chat support",
-        "Remote setup assistance",
-        "Split tunneling",
-        "Ad & malware blocker"
+        "До 15 устройств",
+        "90+ локаций серверов",
+        "256-битное шифрование",
+        "Политика без логов",
+        "Чат-поддержка 24/7",
+        "Удалённая настройка",
+        "Раздельное туннелирование",
+        "Блокировка рекламы и вирусов"
       ],
       popular: true
     },
     {
-      name: "Pro",
-      description: "For businesses and advanced users",
+      name: "Про",
+      description: "Для бизнеса и продвинутых пользователей",
       monthlyPrice: 24.99,
       yearlyPrice: 19.99,
       features: [
-        "Unlimited devices",
-        "90+ server locations",
-        "256-bit encryption",
-        "No-logs policy",
-        "Priority 24/7 support",
-        "Dedicated account manager",
-        "Split tunneling",
-        "Ad & malware blocker",
-        "Dedicated IP option",
-        "Multi-router support"
+        "Безлимит устройств",
+        "90+ локаций серверов",
+        "256-битное шифрование",
+        "Политика без логов",
+        "Приоритетная поддержка 24/7",
+        "Персональный менеджер",
+        "Раздельное туннелирование",
+        "Блокировка рекламы и вирусов",
+        "Выделенный IP",
+        "Поддержка нескольких роутеров"
       ],
       popular: false
     }
   ];
 
   return (
-    <section id="pricing" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="pricing" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background with soft gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-primary/3 rounded-full blur-[120px]" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
           <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            Pricing
+            Тарифы
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Simple, Transparent <span className="text-primary">Pricing</span>
+            Простые и прозрачные <span className="text-primary">цены</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            Choose the plan that fits your needs. All plans include our core security features 
-            with a 30-day money-back guarantee.
+            Выберите план, который подходит вашим потребностям. Все планы включают 
+            основные функции безопасности с 30-дневной гарантией возврата денег.
           </p>
 
           {/* Billing Toggle */}
@@ -89,7 +89,7 @@ const Pricing = () => {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Monthly
+              Ежемесячно
             </button>
             <button
               onClick={() => setIsYearly(true)}
@@ -99,8 +99,8 @@ const Pricing = () => {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Yearly
-              <span className="text-xs text-primary/80 font-semibold">Save 20%</span>
+              Ежегодно
+              <span className="text-xs text-primary/80 font-semibold">-20%</span>
             </button>
           </div>
         </div>
@@ -121,7 +121,7 @@ const Pricing = () => {
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-heading font-semibold uppercase tracking-wider shadow-lg">
                     <Star className="w-3 h-3 fill-current" />
-                    Most Popular
+                    Популярный
                   </div>
                 </div>
               )}
@@ -136,11 +136,11 @@ const Pricing = () => {
                   <span className="text-4xl md:text-5xl font-heading font-bold">
                     ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   </span>
-                  <span className="text-muted-foreground">/mo</span>
+                  <span className="text-muted-foreground">/мес</span>
                 </div>
                 {isYearly && (
                   <p className="text-xs text-muted-foreground mt-2">
-                    Billed annually (${(plan.yearlyPrice * 12).toFixed(0)}/year)
+                    Оплата раз в год (${(plan.yearlyPrice * 12).toFixed(0)}/год)
                   </p>
                 )}
               </div>
@@ -151,7 +151,7 @@ const Pricing = () => {
                 size="lg" 
                 className="w-full mb-8"
               >
-                Get Started
+                Начать
               </Button>
 
               {/* Features List */}
@@ -171,8 +171,8 @@ const Pricing = () => {
 
         {/* Money-back guarantee */}
         <p className="text-center text-muted-foreground text-sm mt-12">
-          All plans include a <span className="text-foreground font-medium">30-day money-back guarantee</span>. 
-          No questions asked.
+          Все планы включают <span className="text-foreground font-medium">30-дневную гарантию возврата</span>. 
+          Без лишних вопросов.
         </p>
       </div>
     </section>

@@ -3,7 +3,7 @@ import { Shield, Lock, Wifi, ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20 pb-12">
       {/* Background Effects - Softer gradients */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Soft gradient orbs */}
@@ -24,56 +24,56 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/60 border border-border/40 mb-8 animate-fade-in backdrop-blur-sm" style={{ animationDelay: '0.1s' }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/60 border border-border/40 mb-6 animate-fade-in backdrop-blur-sm" style={{ animationDelay: '0.1s' }}>
             <div className="w-2 h-2 bg-primary/80 rounded-full" />
-            <span className="text-sm text-muted-foreground">Enterprise-grade security for everyone</span>
+            <span className="text-sm text-muted-foreground">Корпоративная безопасность для каждого</span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Secure Your Entire Network
-            <span className="block text-primary mt-2">With One Router</span>
+          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            Защитите всю сеть
+            <span className="block text-primary mt-2">одним роутером</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            Router BP provides military-grade VPN protection at the router level. 
-            One setup protects every device in your home or business — no apps required.
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            Router BP обеспечивает VPN-защиту военного уровня на уровне роутера. 
+            Одна настройка защищает все устройства дома или в офисе — без приложений.
           </p>
 
           {/* Glassmorphism CTA Container */}
           <div 
-            className="inline-block p-8 rounded-3xl bg-card/30 backdrop-blur-xl border border-border/30 shadow-2xl shadow-background/50 mb-16 animate-fade-in"
+            className="inline-block p-6 rounded-2xl bg-card/30 backdrop-blur-xl border border-border/30 shadow-2xl shadow-background/50 mb-10 animate-fade-in"
             style={{ animationDelay: '0.4s' }}
           >
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="hero" size="xl" className="w-full sm:w-auto group">
-                Get Started
+              <Button variant="hero" size="lg" className="w-full sm:w-auto group">
+                Начать
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="heroOutline" size="xl" className="w-full sm:w-auto">
-                Start Free Trial
+              <Button variant="heroOutline" size="lg" className="w-full sm:w-auto">
+                Бесплатный пробный период
               </Button>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">No credit card required • 30-day money-back guarantee</p>
+            <p className="text-xs text-muted-foreground mt-4">Без банковской карты • 30 дней гарантия возврата</p>
           </div>
 
           {/* Trust indicators - in glass cards */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
               <Shield className="w-4 h-4 text-primary/80" />
-              <span className="text-sm text-muted-foreground">No Logs Policy</span>
+              <span className="text-sm text-muted-foreground">Без логов</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
               <Lock className="w-4 h-4 text-primary/80" />
-              <span className="text-sm text-muted-foreground">256-bit Encryption</span>
+              <span className="text-sm text-muted-foreground">256-бит шифрование</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
+            <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-secondary/40 border border-border/30 backdrop-blur-sm">
               <Wifi className="w-4 h-4 text-primary/80" />
-              <span className="text-sm text-muted-foreground">Unlimited Devices</span>
+              <span className="text-sm text-muted-foreground">Безлимит устройств</span>
             </div>
           </div>
         </div>
