@@ -135,11 +135,6 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Router BP. Все права защищены.
             </p>
-            <div className="flex items-center gap-6">
-              <span className="text-xs text-muted-foreground">
-                <span className="text-primary/80">256-битное шифрование</span>
-              </span>
-            </div>
           </div>
         </div>
       </div>
