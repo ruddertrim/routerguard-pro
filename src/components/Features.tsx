@@ -12,61 +12,61 @@ const Features = () => {
   const features = [
     {
       icon: Home,
-      title: "Full-Home VPN",
-      description: "One router setup protects your entire household. Every device, every room, every connection.",
-      highlights: ["Single configuration", "No per-device apps", "Automatic protection"]
+      title: "VPN для всего дома",
+      description: "Одна настройка роутера защищает весь дом. Каждое устройство, каждая комната, каждое подключение.",
+      highlights: ["Единая конфигурация", "Без приложений", "Автозащита"]
     },
     {
       icon: Smartphone,
-      title: "Auto-Protection",
-      description: "Every device that connects to your network is automatically secured without any action required.",
-      highlights: ["Smart TVs & consoles", "IoT devices", "Guest devices"]
+      title: "Автозащита устройств",
+      description: "Каждое устройство, подключённое к сети, автоматически защищено без каких-либо действий.",
+      highlights: ["Smart TV и консоли", "IoT-устройства", "Гостевые устройства"]
     },
     {
       icon: Zap,
-      title: "High-Speed Encrypted Traffic",
-      description: "Our next-gen protocols ensure your connection stays fast even with full encryption enabled.",
-      highlights: ["WireGuard protocol", "Optimized servers", "No throttling"]
+      title: "Быстрый шифрованный трафик",
+      description: "Наши протоколы нового поколения обеспечивают высокую скорость даже при полном шифровании.",
+      highlights: ["Протокол WireGuard", "Оптимизированные серверы", "Без ограничений"]
     },
     {
       icon: ShieldOff,
-      title: "No Logs, No Tracking",
-      description: "We operate under a strict no-logs policy. Your browsing history stays yours — always.",
-      highlights: ["Zero activity logs", "No connection logs", "Anonymous browsing"]
+      title: "Без логов и слежки",
+      description: "Мы работаем по строгой политике без логов. Ваша история просмотров остаётся только вашей.",
+      highlights: ["Без логов активности", "Без логов соединений", "Анонимный сёрфинг"]
     },
     {
       icon: Headphones,
-      title: "24/7 Expert Support",
-      description: "Our dedicated team is available around the clock to help you with setup and troubleshooting.",
-      highlights: ["Live chat support", "Remote assistance", "Knowledge base"]
+      title: "Поддержка 24/7",
+      description: "Наша команда экспертов доступна круглосуточно для помощи с настройкой и устранением неполадок.",
+      highlights: ["Чат поддержки", "Удалённая помощь", "База знаний"]
     },
     {
       icon: Router,
-      title: "Universal Compatibility",
-      description: "Works with all major router brands including ASUS, Netgear, Linksys, TP-Link, and more.",
-      highlights: ["Pre-configured routers", "Easy setup guides", "Firmware support"]
+      title: "Универсальная совместимость",
+      description: "Работает со всеми основными брендами роутеров: ASUS, Netgear, Linksys, TP-Link и другими.",
+      highlights: ["Готовые роутеры", "Простые инструкции", "Поддержка прошивок"]
     }
   ];
 
   return (
-    <section id="features" className="py-24 md:py-32 relative overflow-hidden">
+    <section id="features" className="py-20 md:py-28 relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/40 to-background" />
       <div className="absolute top-1/2 -translate-y-1/2 right-0 w-1/3 h-2/3 bg-primary/3 rounded-l-full blur-[80px]" />
       <div className="absolute top-1/4 left-0 w-1/4 h-1/2 bg-primary/2 rounded-r-full blur-[60px]" />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
           <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            Features
+            Преимущества
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Everything You Need for <span className="text-primary">Complete Protection</span>
+            Всё для <span className="text-primary">полной защиты</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Router BP combines enterprise-grade security features with consumer-friendly 
-            simplicity. No technical expertise required.
+            Router BP сочетает функции безопасности корпоративного уровня 
+            с простотой для обычного пользователя. Технические знания не требуются.
           </p>
         </div>
 
