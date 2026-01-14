@@ -14,22 +14,22 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl">
+    <nav className="fixed top-0 left-0 right-0 z-50">
       <div className="w-full max-w-[1300px] mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center">
-            <img src={logo} alt="RouterBP" className="h-6 md:h-7" />
+            <img src={logo} alt="RouterBP" className="h-5 md:h-6" />
           </a>
 
-          {/* Desktop Navigation - Centered pill */}
-          <div className="hidden md:flex items-center">
-            <div className="flex items-center gap-1 px-2 py-1.5 rounded-full bg-secondary/60 border border-border/50">
+          {/* Desktop Navigation - Centered white pill */}
+          <div className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2">
+            <div className="flex items-center gap-0 px-1 py-1 rounded-full bg-foreground/95 backdrop-blur-sm">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all duration-300 text-sm font-medium"
+                  className="px-4 py-1.5 rounded-full text-background/70 hover:text-background hover:bg-background/10 transition-all duration-200 text-sm font-medium"
                 >
                   {link.name}
                 </a>
@@ -37,8 +37,8 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Empty right side for balance */}
-          <div className="hidden md:block w-[100px]" />
+          {/* Right side - empty for balance, or could add a CTA */}
+          <div className="hidden md:block" />
 
           {/* Mobile Menu Button */}
           <button
@@ -56,13 +56,13 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border/30 animate-fade-in">
-            <div className="flex flex-col gap-2">
+          <div className="md:hidden py-4 bg-card/95 backdrop-blur-xl rounded-2xl mt-2 border border-border/30 animate-fade-in">
+            <div className="flex flex-col gap-1 px-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors duration-300 text-sm font-medium py-3 px-4 rounded-lg"
+                  className="text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors duration-200 text-sm font-medium py-3 px-4 rounded-xl"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
