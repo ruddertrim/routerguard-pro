@@ -34,7 +34,7 @@ const Hero = () => {
           </a>
 
           {/* Main Headline - large, with period */}
-          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-6 max-w-4xl">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-tight mb-6 w-full">
             Лучший способ защитить вашу сеть.
           </h1>
 
