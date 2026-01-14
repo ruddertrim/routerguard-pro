@@ -95,7 +95,7 @@ const Testimonials = () => {
                 key={`${testimonial.name}-${index}`}
                 className="w-[300px] md:w-[340px] flex-shrink-0"
               >
-                <div className="p-6 md:p-7 rounded-xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 backdrop-blur-sm h-full min-h-[260px] flex flex-col">
+                <div className="p-6 md:p-7 rounded-xl bg-gradient-to-b from-card/70 to-card/30 border border-border/40 backdrop-blur-sm h-full min-h-[300px] flex flex-col">
                   {/* Quote Icon */}
                   <Quote className="w-6 h-6 text-primary/20 mb-4" />
                   
