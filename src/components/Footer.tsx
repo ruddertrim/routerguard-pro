@@ -23,8 +23,6 @@ const Footer = () => {
     legal: [
       { name: "Политика конфиденциальности", href: "#" },
       { name: "Условия использования", href: "#" },
-      { name: "Cookie-политика", href: "#" },
-      { name: "DMCA", href: "#" },
     ],
   };
 
