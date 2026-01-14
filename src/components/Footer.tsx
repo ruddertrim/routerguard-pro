@@ -137,7 +137,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               <span className="text-xs text-muted-foreground">
-                Защищено <span className="text-primary/80">256-битным шифрованием</span>
+                <span className="text-primary/80">256-битное шифрование</span>
               </span>
             </div>
           </div>
