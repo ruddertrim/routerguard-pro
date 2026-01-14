@@ -102,7 +102,7 @@ const Pricing = () => {
         {/* VPN for devices link */}
         <a 
           href="#" 
-          className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 text-sm text-muted-foreground border border-border/60 rounded-full hover:border-[#3CFF00]/50 hover:text-[#3CFF00] transition-all duration-300 group"
+          className="inline-flex items-center gap-2 mt-4 px-5 py-3.5 text-sm text-muted-foreground border border-border/60 rounded-xl hover:border-[#3CFF00]/50 hover:text-[#3CFF00] transition-all duration-300 group"
         >
           <span>VPN для ПК, мобильных устройств и TV</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
