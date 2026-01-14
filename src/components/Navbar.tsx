@@ -33,16 +33,12 @@ const Navbar = () => {
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center">
-            <div className="flex items-center gap-1 px-1.5 py-1.5 rounded-full bg-secondary/60 border border-border/30">
-              {navLinks.map((link, index) => (
+            <div className="flex items-center gap-0.5 px-1 py-1 rounded-full bg-secondary/60 border border-border/30">
+              {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 ${
-                    index === 0 
-                      ? "bg-foreground text-background" 
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/80"
-                  }`}
+                  className="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-out text-muted-foreground hover:text-foreground hover:bg-foreground hover:text-background"
                 >
                   {link.name}
                 </a>
