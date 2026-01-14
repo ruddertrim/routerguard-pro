@@ -28,7 +28,10 @@ const Footer = () => {
       href: "#"
     }],
     support: [{
-      name: "Поддержка",
+      name: "Центр помощи",
+      href: "#"
+    }, {
+      name: "Инструкции",
       href: "#"
     }, {
       name: "FAQ",
@@ -100,14 +103,7 @@ const Footer = () => {
           </div>
 
           {/* Company Links */}
-          <div>
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4 text-foreground/80">Компания</h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map(link => <li key={link.name}>
-                  
-                </li>)}
-            </ul>
-          </div>
+          
 
           {/* Support Links */}
           <div>
