@@ -8,7 +8,6 @@ const Pricing = () => {
   const plans = [
     {
       name: "Базовый",
-      description: "Идеален для отдельных пользователей и небольших домохозяйств",
       monthlyPrice: 9.99,
       yearlyPrice: 7.99,
       features: [
@@ -23,7 +22,6 @@ const Pricing = () => {
     },
     {
       name: "Расширенный",
-      description: "Идеален для семей и продвинутых пользователей",
       monthlyPrice: 14.99,
       yearlyPrice: 11.99,
       features: [
@@ -40,7 +38,6 @@ const Pricing = () => {
     },
     {
       name: "Про",
-      description: "Для бизнеса и продвинутых пользователей",
       monthlyPrice: 24.99,
       yearlyPrice: 19.99,
       features: [
@@ -68,16 +65,9 @@ const Pricing = () => {
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-          <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            Тарифы
-          </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Простые и прозрачные <span className="text-primary">цены</span>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+            тарифы
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            Выберите план, который подходит вашим потребностям. Все планы включают 
-            основные функции безопасности с 30-дневной гарантией возврата денег.
-          </p>
 
           {/* Billing Toggle */}
           <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-secondary/60 border border-border/40 backdrop-blur-sm">
@@ -128,8 +118,7 @@ const Pricing = () => {
 
               {/* Plan Header */}
               <div className="text-center mb-8">
-                <h3 className="font-heading font-bold text-2xl mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground text-sm mb-6">{plan.description}</p>
+                <h3 className="font-heading font-bold text-2xl mb-6">{plan.name}</h3>
                 
                 {/* Price */}
                 <div className="flex items-baseline justify-center gap-1">

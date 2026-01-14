@@ -33,22 +33,14 @@ const About = () => {
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
-          <span className="inline-block text-primary/80 text-sm font-heading font-semibold tracking-wider uppercase mb-4">
-            О Router BP
-          </span>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Приватность — это право, <span className="text-primary">не привилегия</span>
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
+            о нас
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Router BP создан с единственной миссией: сделать корпоративную сетевую безопасность 
-            доступной для каждого. Мы верим, что ваша цифровая приватность не должна зависеть 
-            от технических знаний или дорогих решений.
-          </p>
         </div>
 
         {/* Why Router-Level VPN */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <div className="order-2 lg:order-1">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16 max-w-5xl mx-auto">
+          <div className="order-2 lg:order-1 text-center lg:text-left">
             <h3 className="font-heading text-2xl md:text-3xl font-bold mb-6">
               Почему VPN на уровне роутера?
             </h3>
@@ -103,13 +95,13 @@ const About = () => {
         </div>
 
         {/* Differentiators Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {differentiators.map((item, index) => (
             <div
               key={item.title}
-              className="group p-6 rounded-2xl bg-gradient-to-b from-card/80 to-card/40 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="group p-6 rounded-2xl bg-gradient-to-b from-card/80 to-card/40 border border-border/40 hover:border-border/60 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 text-center"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-primary/10 transition-colors mx-auto">
                 <item.icon className="w-6 h-6 text-primary/80" />
               </div>
               <h4 className="font-heading font-semibold text-lg mb-2">{item.title}</h4>
