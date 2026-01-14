@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 py-4">
       <div className="w-full max-w-[1300px] mx-auto px-4">
         {/* Glass pill navbar */}
-        <div className="flex items-center justify-between h-14 px-4 rounded-full bg-card/80 backdrop-blur-xl border border-border/30">
+        <div className="flex items-center justify-between h-14 px-6 rounded-2xl bg-card/80 backdrop-blur-xl border border-border/30">
           {/* Logo */}
           <a href="#" className="flex items-center">
             <svg width="120" height="18" viewBox="0 0 690 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,10 +52,10 @@ const Navbar = () => {
 
           {/* Contact Button */}
           <a 
-            href="#contact"
-            className="hidden md:flex items-center px-5 py-2 rounded-full bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-colors"
+            href="#pricing"
+            className="hidden md:flex items-center px-5 py-2 rounded-full bg-[hsl(142,76%,36%)] text-background text-sm font-medium hover:bg-[hsl(142,76%,30%)] transition-colors"
           >
-            Контакты
+            Начать
           </a>
 
           {/* Mobile Menu Button */}
@@ -87,11 +87,11 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contact"
-                className="text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors duration-200 text-sm font-medium py-3 px-4 rounded-xl"
+                href="#pricing"
+                className="text-background bg-[hsl(142,76%,36%)] hover:bg-[hsl(142,76%,30%)] transition-colors duration-200 text-sm font-medium py-3 px-4 rounded-xl text-center"
                 onClick={() => setIsOpen(false)}
               >
-                Контакты
+                Начать
               </a>
             </div>
           </div>
