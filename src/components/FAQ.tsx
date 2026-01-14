@@ -48,14 +48,14 @@ const FAQ = () => {
       
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14 md:mb-16">
+        <div className="text-left mb-14 md:mb-16">
           <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
             вопросы
           </h2>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem

@@ -1,57 +1,46 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Check, Star } from "lucide-react";
+import { Check, Plus } from "lucide-react";
 
 const Pricing = () => {
-  const [isYearly, setIsYearly] = useState(true);
-
   const plans = [
     {
-      name: "Базовый",
-      monthlyPrice: 9.99,
-      yearlyPrice: 7.99,
+      name: "Hobby",
+      price: 99,
+      buttonText: "Get Hobby",
       features: [
-        "До 5 устройств",
-        "50+ локаций серверов",
-        "256-битное шифрование",
-        "Политика без логов",
+        "Доступ к базовым отчётам",
+        "До 10,000 точек данных в месяц",
         "Email-поддержка",
-        "Базовое руководство"
+        "Доступ к сообществу",
+        "Отмена в любое время"
       ],
+      includedPlans: [],
       popular: false
     },
     {
-      name: "Расширенный",
-      monthlyPrice: 14.99,
-      yearlyPrice: 11.99,
+      name: "Starter",
+      price: 299,
+      buttonText: "Get Starter",
       features: [
-        "До 15 устройств",
-        "90+ локаций серверов",
-        "256-битное шифрование",
-        "Политика без логов",
-        "Чат-поддержка 24/7",
-        "Удалённая настройка",
-        "Раздельное туннелирование",
-        "Блокировка рекламы и вирусов"
+        "Расширенная аналитика",
+        "Настраиваемые отчёты и графики",
+        "Отслеживание в реальном времени",
+        "Интеграция со сторонними инструментами"
       ],
+      includedPlans: ["Hobby Plan"],
       popular: true
     },
     {
-      name: "Про",
-      monthlyPrice: 24.99,
-      yearlyPrice: 19.99,
+      name: "Pro",
+      price: 1490,
+      buttonText: "Get Pro",
       features: [
-        "Безлимит устройств",
-        "90+ локаций серверов",
-        "256-битное шифрование",
-        "Политика без логов",
-        "Приоритетная поддержка 24/7",
-        "Персональный менеджер",
-        "Раздельное туннелирование",
-        "Блокировка рекламы и вирусов",
-        "Выделенный IP",
-        "Поддержка нескольких роутеров"
+        "Безлимитное хранение данных",
+        "Настраиваемые дашборды",
+        "Продвинутая сегментация данных",
+        "Обработка в реальном времени",
+        "AI-аналитика и рекомендации"
       ],
+      includedPlans: ["Hobby Plan", "Starter Plan"],
       popular: false
     }
   ];
@@ -64,102 +53,79 @@ const Pricing = () => {
       
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-10 md:mb-14">
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
+        <div className="text-left mb-10 md:mb-14">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold">
             тарифы
           </h2>
-
-          {/* Billing Toggle */}
-          <div className="inline-flex items-center gap-1 p-1.5 rounded-full bg-secondary/60 border border-border/40 backdrop-blur-sm">
-            <button
-              onClick={() => setIsYearly(false)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
-                !isYearly 
-                  ? "bg-card text-foreground shadow-md" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Ежемесячно
-            </button>
-            <button
-              onClick={() => setIsYearly(true)}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
-                isYearly 
-                  ? "bg-card text-foreground shadow-md" 
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Ежегодно
-              <span className="text-xs text-primary/80 font-semibold">-20%</span>
-            </button>
-          </div>
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-6">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative p-8 rounded-2xl border transition-all duration-300 ${
-                plan.popular 
-                  ? "bg-gradient-to-b from-primary/8 to-card/60 border-primary/30 scale-105 shadow-2xl backdrop-blur-sm" 
-                  : "bg-gradient-to-b from-card/70 to-card/30 border-border/40 hover:border-border/60 shadow-lg hover:shadow-xl hover:-translate-y-1"
-              }`}
+              className="relative flex flex-col p-6 md:p-8 rounded-2xl bg-card/60 border border-border/40 backdrop-blur-sm"
             >
-              {/* Popular Badge */}
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-heading font-semibold uppercase tracking-wider shadow-lg">
-                    <Star className="w-3 h-3 fill-current" />
-                    Популярный
-                  </div>
-                </div>
-              )}
-
               {/* Plan Header */}
-              <div className="text-center mb-8">
-                <h3 className="font-heading font-bold text-2xl mb-6">{plan.name}</h3>
-                
-                {/* Price */}
-                <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-4xl md:text-5xl font-heading font-bold">
-                    ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="font-heading font-semibold text-xl">{plan.name}</h3>
+                {plan.popular && (
+                  <span className="px-3 py-1 rounded-full border border-border/60 text-xs font-medium text-muted-foreground">
+                    Featured
                   </span>
-                  <span className="text-muted-foreground">/мес</span>
-                </div>
-                {isYearly && (
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Оплата раз в год (${(plan.yearlyPrice * 12).toFixed(0)}/год)
-                  </p>
                 )}
               </div>
 
+              {/* Price */}
+              <div className="flex items-baseline gap-1 mb-6">
+                <span className="text-lg text-muted-foreground align-top">$</span>
+                <span className="text-6xl md:text-7xl font-heading font-bold tracking-tight">
+                  {plan.price}
+                </span>
+                <span className="text-muted-foreground">/month</span>
+              </div>
+
               {/* CTA Button */}
-              <Button 
-                variant={plan.popular ? "hero" : "outline"} 
-                size="lg" 
-                className="w-full mb-8"
+              <button 
+                className="w-full py-3.5 rounded-lg bg-[hsl(195,100%,50%)] text-background font-medium text-sm hover:bg-[hsl(195,100%,45%)] transition-colors mb-8"
               >
-                Начать
-              </Button>
+                {plan.buttonText}
+              </button>
 
               {/* Features List */}
-              <ul className="space-y-3">
+              <ul className="space-y-3 flex-grow">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                      plan.popular ? "text-primary/80" : "text-muted-foreground"
-                    }`} />
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
+
+              {/* Included Plans */}
+              {plan.includedPlans.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-border/40">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Plus className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  <ul className="space-y-2">
+                    {plan.includedPlans.map((includedPlan) => (
+                      <li key={includedPlan} className="flex items-center gap-3">
+                        <div className="w-4 h-4 rounded-full bg-[hsl(195,100%,50%)] flex items-center justify-center">
+                          <Check className="w-2.5 h-2.5 text-background" />
+                        </div>
+                        <span className="text-sm text-[hsl(195,100%,50%)]">Everything in {includedPlan}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
         {/* Money-back guarantee */}
-        <p className="text-center text-muted-foreground text-sm mt-12">
+        <p className="text-left text-muted-foreground text-sm mt-12">
           Все планы включают <span className="text-foreground font-medium">30-дневную гарантию возврата</span>. 
           Без лишних вопросов.
         </p>
