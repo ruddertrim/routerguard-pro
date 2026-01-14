@@ -7,8 +7,7 @@ const Pricing = () => {
     "Безлимитный трафик",
     "Блокировка рекламы на YouTube",
     "Для всех устройств в доме",
-    "Поддерживает Smart TV, Apple TV, Android TV и другие",
-    "Совместим с: Asus, Keenetic, Netcraze, OpenWRT, Padavan, TP-Link"
+    "Поддерживает Smart TV, Apple TV, Android TV и другие"
   ];
 
   const plans = [
@@ -54,7 +53,7 @@ const Pricing = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="relative flex flex-col p-6 md:p-8 rounded-2xl bg-card/60 border border-border/40 backdrop-blur-sm"
+              className="relative flex flex-col p-6 md:p-8 rounded-2xl bg-card/60 border border-border/40 backdrop-blur-sm min-h-[520px]"
             >
               {/* Plan Header */}
               <div className="flex items-center justify-between mb-6">
@@ -85,7 +84,7 @@ const Pricing = () => {
               <ul className="space-y-3 flex-grow">
                 {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-[hsl(142,76%,36%)]" />
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-muted-foreground" />
                     <span className="text-sm text-muted-foreground">{feature}</span>
                   </li>
                 ))}
