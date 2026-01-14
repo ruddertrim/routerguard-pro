@@ -55,7 +55,7 @@ const FAQ = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="max-w-3xl">
+        <div className="w-full">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
