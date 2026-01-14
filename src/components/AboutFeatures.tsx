@@ -36,9 +36,6 @@ const AboutFeatures = () => {
 
   return (
     <section id="about" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-card/30 via-background to-background" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#3CFF00]/5 rounded-full blur-[100px]" />
       
       <div className="w-full max-w-[1300px] mx-auto px-4 relative z-10">
         {/* Section Header */}
