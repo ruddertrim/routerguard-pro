@@ -1,46 +1,36 @@
 import { Check, Plus } from "lucide-react";
 
 const Pricing = () => {
+  const features = [
+    "Доступ ко всем сайтам и сервисам",
+    "Выборочная маршрутизация",
+    "Безлимитный трафик",
+    "Блокировка рекламы на YouTube",
+    "Для всех устройств в доме",
+    "Поддерживает Smart TV, Apple TV, Android TV и другие",
+    "Совместим с: Asus, Keenetic, Netcraze, OpenWRT, Padavan, TP-Link"
+  ];
+
   const plans = [
     {
-      name: "Hobby",
-      price: 99,
-      buttonText: "Get Hobby",
-      features: [
-        "Доступ к базовым отчётам",
-        "До 10,000 точек данных в месяц",
-        "Email-поддержка",
-        "Доступ к сообществу",
-        "Отмена в любое время"
-      ],
-      includedPlans: [],
+      name: "1 месяц",
+      price: 990,
+      period: "₽/мес",
+      buttonText: "Выбрать",
       popular: false
     },
     {
-      name: "Starter",
-      price: 299,
-      buttonText: "Get Starter",
-      features: [
-        "Расширенная аналитика",
-        "Настраиваемые отчёты и графики",
-        "Отслеживание в реальном времени",
-        "Интеграция со сторонними инструментами"
-      ],
-      includedPlans: ["Hobby Plan"],
+      name: "3 месяца",
+      price: 790,
+      period: "₽/мес",
+      buttonText: "Выбрать",
       popular: true
     },
     {
-      name: "Pro",
-      price: 1490,
-      buttonText: "Get Pro",
-      features: [
-        "Безлимитное хранение данных",
-        "Настраиваемые дашборды",
-        "Продвинутая сегментация данных",
-        "Обработка в реальном времени",
-        "AI-аналитика и рекомендации"
-      ],
-      includedPlans: ["Hobby Plan", "Starter Plan"],
+      name: "6 месяцев",
+      price: 590,
+      period: "₽/мес",
+      buttonText: "Выбрать",
       popular: false
     }
   ];
@@ -71,55 +61,35 @@ const Pricing = () => {
                 <h3 className="font-heading font-semibold text-xl">{plan.name}</h3>
                 {plan.popular && (
                   <span className="px-3 py-1 rounded-full border border-border/60 text-xs font-medium text-muted-foreground">
-                    Featured
+                    Популярный
                   </span>
                 )}
               </div>
 
               {/* Price */}
               <div className="flex items-baseline gap-1 mb-6">
-                <span className="text-lg text-muted-foreground align-top">$</span>
                 <span className="text-6xl md:text-7xl font-heading font-bold tracking-tight">
                   {plan.price}
                 </span>
-                <span className="text-muted-foreground">/month</span>
+                <span className="text-muted-foreground">{plan.period}</span>
               </div>
 
               {/* CTA Button */}
               <button 
-                className="w-full py-3.5 rounded-lg bg-[hsl(195,100%,50%)] text-background font-medium text-sm hover:bg-[hsl(195,100%,45%)] transition-colors mb-8"
+                className="w-full py-3.5 rounded-full bg-[hsl(142,76%,36%)] text-white font-medium text-sm hover:bg-[hsl(142,76%,30%)] transition-colors mb-8"
               >
                 {plan.buttonText}
               </button>
 
               {/* Features List */}
               <ul className="space-y-3 flex-grow">
-                {plan.features.map((feature) => (
+                {features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-muted-foreground" />
+                    <Check className="w-4 h-4 flex-shrink-0 mt-0.5 text-[hsl(142,76%,36%)]" />
                     <span className="text-sm text-muted-foreground">{feature}</span>
                   </li>
                 ))}
               </ul>
-
-              {/* Included Plans */}
-              {plan.includedPlans.length > 0 && (
-                <div className="mt-6 pt-6 border-t border-border/40">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Plus className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <ul className="space-y-2">
-                    {plan.includedPlans.map((includedPlan) => (
-                      <li key={includedPlan} className="flex items-center gap-3">
-                        <div className="w-4 h-4 rounded-full bg-[hsl(195,100%,50%)] flex items-center justify-center">
-                          <Check className="w-2.5 h-2.5 text-background" />
-                        </div>
-                        <span className="text-sm text-[hsl(195,100%,50%)]">Everything in {includedPlan}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
             </div>
           ))}
         </div>
