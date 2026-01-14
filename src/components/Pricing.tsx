@@ -1,4 +1,4 @@
-import { Check, Plus } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const Pricing = () => {
   const features = [
@@ -98,6 +98,15 @@ const Pricing = () => {
           Все планы включают <span className="text-foreground font-medium">30-дневную гарантию возврата</span>. 
           Без лишних вопросов.
         </p>
+
+        {/* VPN for devices link */}
+        <a 
+          href="#" 
+          className="inline-flex items-center gap-2 mt-4 text-sm text-muted-foreground hover:text-[#3CFF00] transition-colors group"
+        >
+          <span>VPN для ПК, мобильных устройств и TV</span>
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
       </div>
     </section>
   );
